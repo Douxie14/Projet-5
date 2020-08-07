@@ -9,7 +9,7 @@ teddiesInformation ('http://localhost:3000/api/teddies')
 .then (teddies => {
     teddies.forEach(teddy => {
         console.log(teddy)  
-        teddiesList.innerHTML += `<div><img
+        teddiesList.innerHTML += `<div><img id="teddyImg"
          src="${teddy.imageUrl}"></div>`
     })         
 })

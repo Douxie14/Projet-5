@@ -1,3 +1,61 @@
+/* ----------------------Index--------------------------*/
+
+
+
 body {
-    background-color: aqua;
+    background-color: whitesmoke;
 }
+
+@font-face {
+    font-family: 'Belligerent-Madness';
+    src:url('Belligerent-Madness.ttf.woff') format('woff'),
+        url('Belligerent-Madness.ttf.svg#Belligerent-Madness') format('svg'),
+        url('Belligerent-Madness.ttf.eot'),
+        url('Belligerent-Madness.ttf.eot?#iefix') format('embedded-opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family:'Belligerent-Madness';
+    font-size: 2em;
+    text-align: center;
+    background-color: #f2e8f0;
+}
+.logo {
+    width: 300px;
+}
+.slogan {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+}
+.panier {
+    width: 60px;
+}
+article {
+    display: flex;
+}
+#teddyImg {
+    width: 500px;
+    margin: 20px;
+    box-shadow: 3px 3px 6px 3px grey;
+    border-radius: 20px;
+    border: white; 
+}
+#teddyImg:hover {
+    width: 600px;
+    transition: 1s;
+}
+#bloc_image {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+
+
+/*--------------------------Produit----------------------------------*/
