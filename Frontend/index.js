@@ -9,8 +9,8 @@ teddiesInformation ('http://localhost:3000/api/teddies')
 .then (teddies => {
     teddies.forEach(teddy => {
         console.log(teddy)  
-        teddiesList.innerHTML += `<div><img id="teddyImg"
-         src="${teddy.imageUrl}"></div>`
+        teddiesList.innerHTML += `<div><a href="./produit.html"><img id="teddyImg"
+         src="${teddy.imageUrl}"><div id="detail">${teddy.name}${teddy.price}</div></a></div>`
     })         
 })
 .catch (error => {
