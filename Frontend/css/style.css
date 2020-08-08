@@ -69,3 +69,22 @@ article {
 
 
 /*--------------------------Produit----------------------------------*/
+
+#produit {
+    display: flex;
+}
+#teddyPhoto {
+    width: 500px;
+    box-shadow: 3px 3px 6px 3px #935DEE;
+    border-radius: 20px;
+    margin: 30px;
+}
+#information {
+    margin: 60px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    text-align: center;
+    font-family: 'Belligerent-Madness';
+    font-size: 1.5em;
+}

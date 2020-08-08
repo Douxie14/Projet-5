@@ -1,15 +1,65 @@
-const teddiesList = document.getElementById("produit");
+//-----------------CONST------------------------
+
+const oneTeddy = document.getElementById("produit");
+const urls = new URL(window.location.href);
+const params = new URLSearchParams(urls.search);
+const teddyId = params.get('id');
+const photo = document.getElementById("photo");
+const price = document.getElementById("price");
+const name = document.getElementById("name");
+const description = document.getElementById("description");
+const color = document.getElementById("color");
+const select = document.getElementById("select");
+
+//----------------------------FETCH------------------------
 
 async function teddiesInformation (url) {
     let result = await fetch(url)
     return result.json()
 }
-teddiesInformation ('http://localhost:3000/api/teddies') 
-.then (teddies => {
-    teddies.forEach(teddy => {
-        console.log(teddy)
-    })
-})
-.catch (error => {
-    console.log(error)
-})
+
+//--------------------------TEDDY------------------------------
+
+teddiesInformation ('http://localhost:3000/api/teddies' + '/' + teddyId)
+
+.then (teddy => { photo.innerHTML += `<img id="teddyPhoto" src="${teddy.imageUrl}">`
+                name.innerHTML += `${teddy.name}`
+                price.innerHTML += `${teddy.price} €`
+                description.innerHTML += `${teddy.description}`
+
+//----------------menu déroulant couleurs-----------------------
+
+                const teddyColor = teddy.colors;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+/*
+                for(let i = 0; i < teddyColor.length; i++) {
+
+                    let option = teddyColor[i];
+                    let element = document.createElement("option");
+                    element.textContent = option;
+                    element.value = option;
+                    select.appendChild(element);
+                }
+               
+        })*/
+ 

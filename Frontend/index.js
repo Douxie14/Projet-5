@@ -9,9 +9,12 @@ teddiesInformation ('http://localhost:3000/api/teddies')
 .then (teddies => {
     teddies.forEach(teddy => {
         console.log(teddy)  
-        teddiesList.innerHTML += `<div><a href="./produit.html"><img id="teddyImg"
-         src="${teddy.imageUrl}"></a><div id="detail"><span>${teddy.name}</span><span>${teddy.price} €</span></div></div>`
-    })         
+        teddiesList.innerHTML += `<div>
+        <a href="produit.html?id=${teddy._id}">
+        <img id="teddyImg" src="${teddy.imageUrl}"></a>
+         <div id="detail"><span>${teddy.name}</span><span>${teddy.price} €</span></div>
+         </div>`
+    })
 })
 .catch (error => {
     console.log("nous avons trouvé " + error)
