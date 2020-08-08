@@ -41,21 +41,31 @@ article {
 }
 #teddyImg {
     width: 500px;
-    margin: 20px;
-    box-shadow: 3px 3px 6px 3px grey;
+    height: 300px;
+    margin: 50px 20px 10px 20px;
+    box-shadow: 3px 3px 6px 3px #935DEE;
     border-radius: 20px;
-    border: white; 
+    border: white;
+    transition: 1s; 
 }
 #teddyImg:hover {
-    width: 600px;
+    width: 550px;
+    height: 350px;
     transition: 1s;
+    box-shadow: 4px 4px 6px 3px #D48136;
 }
 #bloc_image {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
 }
-
+#detail {
+    display: flex;
+    justify-content: space-around;
+    font-family: 'Belligerent-Madness' ;
+    color: #935DEE;
+    font-size: 1.5em;
+}
 
 
 /*--------------------------Produit----------------------------------*/
