@@ -30,36 +30,12 @@ teddiesInformation ('http://localhost:3000/api/teddies' + '/' + teddyId)
 //----------------menu déroulant couleurs-----------------------
 
                 const teddyColor = teddy.colors;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                const select = document.getElementById ("select");
                 
-/*
                 for(let i = 0; i < teddyColor.length; i++) {
-
-                    let option = teddyColor[i];
-                    let element = document.createElement("option");
-                    element.textContent = option;
-                    element.value = option;
-                    select.appendChild(element);
+                    let colorOption = teddyColor[i];
+                    select.innerHTML += `<option> ${colorOption} </option>` 
                 }
-               
-        })*/
+            })
+
  
