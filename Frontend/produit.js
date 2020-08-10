@@ -31,11 +31,37 @@ teddiesInformation ('http://localhost:3000/api/teddies' + '/' + teddyId)
 
                 const teddyColor = teddy.colors;
                 const select = document.getElementById ("select");
-                
+            
                 for(let i = 0; i < teddyColor.length; i++) {
                     let colorOption = teddyColor[i];
                     select.innerHTML += `<option> ${colorOption} </option>` 
-                }
-            })
+                }});
+          
+const addCart = [];
+const panier = document.getElementById("btn");
 
- 
+const myLocalStorage = localStorage;
+
+
+    panier.addEventListener('click', function() {
+        
+    alert("article ajouté au panier ;)") 
+    const colorSelect = select.options[select.selectedIndex].value
+    addCart.push(teddyId, colorSelect)
+    console.log(addCart)
+
+    class teddyAndColor { 
+            constructor(teddy, color) {
+            this.teddy = teddyId;
+            this.color = colorSelect;
+    }
+} 
+    console.log(teddyAndColor)
+    localStorage.setItem(new teddyAndColor, 1 );
+})
+   
+
+    
+    
+
+

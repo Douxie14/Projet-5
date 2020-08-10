@@ -72,6 +72,7 @@ article {
 
 #produit {
     display: flex;
+    margin: 60px;
 }
 #teddyPhoto {
     width: 500px;
@@ -80,11 +81,46 @@ article {
     margin: 30px;
 }
 #information {
-    margin: 60px;
+    margin: 40px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    align-items: center;
     text-align: center;
     font-family: 'Belligerent-Madness';
     font-size: 1.5em;
+    
+}
+#name 
+{
+    font-size: 2em;
+    color:#D48136;
+    box-shadow: 3px 3px 6px 3px #935DEE;
+    border-radius: 20px;
+    width: 60%;
+    margin-bottom: 30px;
+}
+
+#detailProduit {
+    display: flex;
+    margin-top: 30px;
+}
+#price {
+    margin-right: 20px;
+}
+#select {
+    font-size: 1em;
+    color: #935DEE;
+    font-family: 'Belligerent-Madness';
+    border-color: black;
+}
+#btn {
+    margin-top: 40px;
+    font-size: 1em;
+    color:#D48136; 
+    box-shadow: 3px 3px 6px 3px #935DEE;
+    border-radius: 20px;
+    width: 50%;
+    font-family: 'Belligerent-Madness';
+    background-color: white;
 }
