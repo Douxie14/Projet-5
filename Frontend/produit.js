@@ -38,7 +38,7 @@ teddiesInformation ('http://localhost:3000/api/teddies' + '/' + teddyId)
                     let colorOption = teddyColor[i];
                     select.innerHTML += `<option> ${colorOption} </option>`
                 }
-            
+ /*           
   //------------------------------création panier----------------------//        
 let newCart = null;
 let quantity = 1;
@@ -86,25 +86,35 @@ function addProduct () {
 
 })
 
-
-
-
-
-
-/*
-class teddyAndColor { 
-            constructor(teddyId, colorSelect) {
-            this.teddyId = teddyId;
-            this.colorSelect = colorSelect;
-    }
-}    
-localStorage.key = 0;
-    let key = localStorage.key;
-    function onClick() {
-        key += 1;
-    }
-     const newTeddyAndColor = new teddyAndColor (teddyId, colorSelect);
-    console.log(newTeddyAndColor); */
+*/
+    
     
 
+panier.addEventListener('click', function(){
+    alert("article ajouté au panier ;)")
+    let key = localStorage.key;
+    let quantity = (key = 0);  
+    
+    btn.onClick = function () {
+        key += 1
+    };
+
+let colorSelect = select.options[select.selectedIndex].value;
+let teddyPrice = teddy.price;
+class teddyAndColor { 
+            constructor(teddyId, colorSelect, teddyPrice, quantity ) {
+            this.teddyId = teddyId;
+            this.colorSelect = colorSelect;
+            this.teddyPrice = teddyPrice;
+            this.quantity = quantity;
+    }
+}    
+
+     const newTeddyAndColor = new teddyAndColor (teddyId, colorSelect, teddyPrice, quantity);
+     localStorage.setItem(key, JSON.stringify(newTeddyAndColor))
+
+    console.log(newTeddyAndColor); 
+
+})
+})
 
