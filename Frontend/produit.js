@@ -37,31 +37,43 @@ teddiesInformation ('http://localhost:3000/api/teddies' + '/' + teddyId)
                     select.innerHTML += `<option> ${colorOption} </option>` 
                 }});
           
-const addCart = [];
+let addCart = [];
 const panier = document.getElementById("btn");
-
 const myLocalStorage = localStorage;
+let quantity = 1;
+const colorSelect = select.options[select.selectedIndex].value; 
 
-
-    panier.addEventListener('click', function() {
-        
+    panier.addEventListener('click', addProduct())
+    function addProduct() { 
     alert("article ajouté au panier ;)") 
-    const colorSelect = select.options[select.selectedIndex].value
-    addCart.push(teddyId, colorSelect)
-    console.log(addCart)
-
-    class teddyAndColor { 
-            constructor(teddy, color) {
-            this.teddy = teddyId;
-            this.color = colorSelect;
+    localStorage.setItem('cart',JSON.stringify(addCart))}
+                                        
+    function product () {
+        let productFound = addCart.find(element => element.teddyId == teddyId && element.colorSelect == colorSelect);
+            if (productFound = undefined){
+        addCart.push(teddyId, colorSelect, teddy.price, quantity)
+            } else {
+        productFound.quantity++;
     }
-} 
-    console.log(teddyAndColor)
-    localStorage.setItem(new teddyAndColor, 1 );
-})
-   
 
-    
+    localStorage.setItem('cart',JSON.stringify(addCart));
+    console.log(productFound)
+}
+console.log(addCart)
+/*
+class teddyAndColor { 
+            constructor(teddyId, colorSelect) {
+            this.teddyId = teddyId;
+            this.colorSelect = colorSelect;
+    }
+}    
+localStorage.key = 0;
+    let key = localStorage.key;
+    function onClick() {
+        key += 1;
+    }
+     const newTeddyAndColor = new teddyAndColor (teddyId, colorSelect);
+    console.log(newTeddyAndColor); */
     
 
 
