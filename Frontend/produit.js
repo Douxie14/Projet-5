@@ -10,6 +10,8 @@ const name = document.getElementById("name");
 const description = document.getElementById("description");
 const color = document.getElementById("color");
 const select = document.getElementById("select");
+const panier = document.getElementById("btn");
+const myLocalStorage = localStorage;
 
 //----------------------------FETCH------------------------
 
@@ -34,32 +36,61 @@ teddiesInformation ('http://localhost:3000/api/teddies' + '/' + teddyId)
             
                 for(let i = 0; i < teddyColor.length; i++) {
                     let colorOption = teddyColor[i];
-                    select.innerHTML += `<option> ${colorOption} </option>` 
-                }});
-          
-let addCart = [];
-const panier = document.getElementById("btn");
-const myLocalStorage = localStorage;
+                    select.innerHTML += `<option> ${colorOption} </option>`
+                }
+            
+  //------------------------------création panier----------------------//        
+let newCart = null;
 let quantity = 1;
-const colorSelect = select.options[select.selectedIndex].value; 
+let productPrice = teddy.price;
+let productId = teddyId;
 
-    panier.addEventListener('click', addProduct())
-    function addProduct() { 
-    alert("article ajouté au panier ;)") 
-    localStorage.setItem('cart',JSON.stringify(addCart))}
-                                        
-    function product () {
-        let productFound = addCart.find(element => element.teddyId == teddyId && element.colorSelect == colorSelect);
-            if (productFound = undefined){
-        addCart.push(teddyId, colorSelect, teddy.price, quantity)
+panier.addEventListener('click', addProduct);
+
+function createNewCart() {
+    let storageCart = localStorage.getItem('cart');
+
+    if (storageCart == null ) {
+        newCart = [];
+
+    } else { newCart= JSON.parse(storageCart)}
+
+    localStorage.setItem('cart',JSON.stringify(newCart));
+}
+
+//----------------------Ajout Panier-------------------------//
+
+
+function product() {
+    let colorSelect = select.options[select.selectedIndex].value;
+    let productColor = colorSelect;
+    let productFound = newCart.find(element => element.productId == productId && element.productColor == productColor); 
+            if (productFound == undefined) {
+        newCart.push({productId, productColor, productPrice, quantity});
             } else {
         productFound.quantity++;
     }
-
-    localStorage.setItem('cart',JSON.stringify(addCart));
     console.log(productFound)
+    localStorage.setItem('cart',JSON.stringify(newCart));    
 }
-console.log(addCart)
+
+function addProduct () {
+    alert("article ajouté au panier ;)")
+    if(newCart == null){
+        createNewCart() 
+    } 
+
+    product()
+
+    }
+
+})
+
+
+
+
+
+
 /*
 class teddyAndColor { 
             constructor(teddyId, colorSelect) {
