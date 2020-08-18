@@ -38,12 +38,13 @@ teddiesInformation ('http://localhost:3000/api/teddies' + '/' + teddyId)
                     let colorOption = teddyColor[i];
                     select.innerHTML += `<option> ${colorOption} </option>`
                 }
- /*           
+          
   //------------------------------création panier----------------------//        
 let newCart = null;
 let quantity = 1;
 let productPrice = teddy.price;
 let productId = teddyId;
+let productName = teddy.name;
 
 panier.addEventListener('click', addProduct);
 
@@ -66,7 +67,7 @@ function product() {
     let productColor = colorSelect;
     let productFound = newCart.find(element => element.productId == productId && element.productColor == productColor); 
             if (productFound == undefined) {
-        newCart.push({productId, productColor, productPrice, quantity});
+        newCart.push({productName, productId, productColor, productPrice, quantity});
             } else {
         productFound.quantity++;
     }
@@ -86,9 +87,9 @@ function addProduct () {
 
 })
 
-*/
+
     
-    
+/*      
 
 panier.addEventListener('click', function(){
     alert("article ajouté au panier ;)")
@@ -118,3 +119,4 @@ class teddyAndColor {
 })
 })
 
+*/

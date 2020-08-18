@@ -124,3 +124,10 @@ article {
     font-family: 'Belligerent-Madness';
     background-color: white;
 }
+table {
+    border-collapse: collapse;
+    
+}
+th, td {
+    border: solid black 1px;
+}
